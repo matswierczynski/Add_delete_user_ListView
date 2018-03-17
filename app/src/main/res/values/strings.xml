@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Add_delete_user_ListView</string>
+    <string name="app_name">ListView</string>
+    <string name="pick_date">Pick date</string>
+    <string name="menuItemSave">Save</string>
+    <string name="nameTextView">Name</string>
+    <string name="lastNameTextView">Last name</string>
+    <string name="dateTextView">Date of birth</string>
+    <string name="nameHint">Enter your name</string>
+    <string name="hintLastName">Enter your last name</string>
+    <string name="hintDate">Enter date of your birth</string>
 </resources>
