@@ -8,4 +8,7 @@
     <string name="nameHint">Enter your name</string>
     <string name="hintLastName">Enter your last name</string>
     <string name="hintDate">Enter date of your birth</string>
+    <string name="menuItemAdd">Add</string>
+    <string name="nameLastNameTextView">Name and last name</string>
+    <string name="ageTextView">Age</string>
 </resources>

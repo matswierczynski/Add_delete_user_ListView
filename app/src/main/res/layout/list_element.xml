@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="2dp">
+
+    <ImageView
+        android:id="@+id/UserImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_person_black_24dp" />
+
+    <TextView
+        android:id="@+id/NameLastNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/UserImageView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/UserImageView"
+        android:gravity="start"
+        android:text="@string/nameLastNameTextView"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/UserImageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/AgeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/UserImageView"
+        android:layout_alignEnd="@+id/removeImageButton"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_toEndOf="@+id/ageLabelTextView"
+        android:padding="2dp"
+        android:text="@string/ageTextView"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/ageLabelTextView"
+        app:layout_constraintTop_toBottomOf="@+id/NameLastNameTextView" />
+
+    <ImageButton
+        android:id="@+id/removeImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ageLabelTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_remove_black_24dp" />
+
+    <TextView
+        android:id="@+id/ageLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/AgeTextView"
+        android:layout_alignBottom="@+id/AgeTextView"
+        android:layout_alignStart="@+id/NameLastNameTextView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:padding="2dp"
+        android:text="@string/ageTextView"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/UserImageView"
+        app:layout_constraintTop_toBottomOf="@+id/NameLastNameTextView" />
+
+</android.support.constraint.ConstraintLayout>

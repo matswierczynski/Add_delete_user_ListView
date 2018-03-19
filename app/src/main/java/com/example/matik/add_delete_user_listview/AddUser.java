@@ -96,23 +96,24 @@ public class AddUser extends AppCompatActivity {
     private void save(){
         name = ((TextView)findViewById(R.id.nameEditText)).getText().toString();
         lastName = ((TextView)findViewById(R.id.lastNameEditText)).getText().toString();
-        if (name.length() >=2)
-            if (lastName.length() >=2)
+        if (name.length() >=2) {
+            if (lastName.length() >= 2) {
                 /*date can be changed only by date picker dialog, if year is correct then month and
                 day of month are also chosen*/
                 if (year > 1900 && year < Calendar.getInstance().get(Calendar.YEAR))
                     passArgumentsToMainActivity();
                 else Toast.makeText(
-                                    this,
-                                    "Enter correct date of birth",
-                                    Toast.LENGTH_SHORT).show();
-            else Toast.makeText(
-                                this,
-                                "Enter correct surname",
-                                Toast.LENGTH_SHORT).show();
+                        this,
+                        "Enter correct date of birth",
+                        Toast.LENGTH_SHORT).show();
+            } else Toast.makeText(
+                    this,
+                    "Enter correct name",
+                    Toast.LENGTH_SHORT).show();
+        }
         else Toast.makeText(
                             this,
-                            "Enter correct name",
+                            "Enter correct surname",
                              Toast.LENGTH_SHORT).show();
 
     }
