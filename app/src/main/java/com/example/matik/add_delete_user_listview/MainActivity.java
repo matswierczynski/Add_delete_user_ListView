@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     private static ArrayList<String> names = new ArrayList<>();
     private static ArrayList<String> lastNames = new ArrayList<>();
     private static ArrayList<Integer> ages = new ArrayList<>();
+    public  static String              ARE_DATA_PENDING_MESSAGE =
+                                        "com.example.matik.add_delete_user_listview." +
+                                                "areDataPendingMessage";
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -29,21 +32,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent intent = getIntent();
-        if (intent != null && intent.getExtras() != null) {
+        if ((intent != null) && intent.getBooleanExtra(ARE_DATA_PENDING_MESSAGE, false)) {
             int year, month, dayOfMonth;
             String name, lastName;
-            year = getIntent().getIntExtra(AddUser.YEAR_EXTRA_MESSAGE, 2000);
-            month = getIntent().getIntExtra(AddUser.MONTH_EXTRA_MESSAGE, 1);
-            dayOfMonth = getIntent().getIntExtra(AddUser.DAY_OF_MONTH_EXTRA_MESSAGE, 1);
-            name = getIntent().getStringExtra(AddUser.NAME_EXTRA_MESSAGE);
-            lastName = getIntent().getStringExtra(AddUser.LASTNAME_EXTRA_MESSAGE);
+            year = intent.getIntExtra(AddUser.YEAR_EXTRA_MESSAGE, 2000);
+            month = intent.getIntExtra(AddUser.MONTH_EXTRA_MESSAGE, 1);
+            dayOfMonth = intent.getIntExtra(AddUser.DAY_OF_MONTH_EXTRA_MESSAGE, 1);
+            name = intent.getStringExtra(AddUser.NAME_EXTRA_MESSAGE);
+            lastName = intent.getStringExtra(AddUser.LASTNAME_EXTRA_MESSAGE);
 
-            getIntent().removeExtra(AddUser.YEAR_EXTRA_MESSAGE);
-            getIntent().removeExtra(AddUser.MONTH_EXTRA_MESSAGE);
-            getIntent().removeExtra(AddUser.DAY_OF_MONTH_EXTRA_MESSAGE);
-            getIntent().removeExtra(AddUser.NAME_EXTRA_MESSAGE);
-            getIntent().removeExtra(AddUser.LASTNAME_EXTRA_MESSAGE);
-
+            intent.removeExtra(ARE_DATA_PENDING_MESSAGE);
             addNewPerson(name, lastName, calculateAge(dayOfMonth, month, year));
         }
 

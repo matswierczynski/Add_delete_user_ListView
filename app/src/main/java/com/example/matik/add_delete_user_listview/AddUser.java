@@ -125,6 +125,7 @@ public class AddUser extends AppCompatActivity {
         intent.putExtra(YEAR_EXTRA_MESSAGE, year);
         intent.putExtra(MONTH_EXTRA_MESSAGE, month);
         intent.putExtra(DAY_OF_MONTH_EXTRA_MESSAGE, dayOfMonth);
+        intent.putExtra(MainActivity.ARE_DATA_PENDING_MESSAGE, true);
         startActivity(intent);
 
     }
